@@ -128,7 +128,9 @@ public class ExtractDocumentMetadata extends AbstractProcessor {
             return;
         }
 
-        final BodyContentHandler parserHandler = new BodyContentHandler();
+        //FIXME: inserire il parametro writelimit nei paramteri modificabili da interfaccia
+        final Integer writeLimit = -1;
+        final BodyContentHandler parserHandler = new BodyContentHandler(writeLimit);
         final ParseContext parserContext = new ParseContext();
         final AutoDetectParser parser = new AutoDetectParser();
 
